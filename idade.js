@@ -12,14 +12,29 @@ function verificar(){
         var img = document.createElement('img')
         img.setAttribute('id','foto')
         if (sexchecked[0].checked){
-            res.innerHTML = `Detectamos uma pessoa de ${idade} anos do sexo masculino`
             var gênero = 'Masculino'
-            if (idade >= 0 && idade < 10){
-                img.setAttribute()
+            if (idade > 0 && idade <= 10){
+                img.setAttribute('src','foto-bebe-m.png')
+            }else if(idade <= 21){
+                img.setAttribute('src','foto-jovem-m.png')
+            } else if (idade <= 60){
+                img.setAttribute('src','foto-adulto-m.png')
+            }else{
+                img.setAttribute('src','foto-idoso-m.png')
             }
-        }else
-        {
-            res.innerHTML = `Detectamos uma pessoa de ${idade} anos do sexo feminino`
+        } else{
             var gênero = 'Feminino'
+            if (idade > 0 && idade <= 10){
+                img.setAttribute('src','foto-bebe-f.png')
+            } else if(idade <= 20){
+                img.setAttribute('src','foto-jovem-f.png')
+            }else if (idade <= 60){
+                img.setAttribute('src','foto-adulto-f.png')
+            }else{
+                img.setAttribute('src','foto-idoso-f.png')
+            }
         }
-}}
+        res.innerHTML = `Detectamos uma pessoa do sexo ${gênero} com ${idade} anos`
+        res.appendChild(img)
+    }
+}    

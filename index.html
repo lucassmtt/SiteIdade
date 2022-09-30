@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="estiloidade.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de nascimento: 
+                <input type="number" name="txtano" id="txtano" min="1" max=""> 
+            </p>
+                <p>Sexo:
+                <input type="radio" name="radsex" id="mas" checked>
+                <label for="sexm">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="sexf">Feminino</label> 
+            </p>
+            <p><input type="button" value="Verificar" onclick="verificar()"></p>
+        </div>
+        <br>
+        <!-- #region -->
+        <div id="res">
+            <br>
+            Preencha os dados acima para ver o resultado:
+        </div>
+    </section>
+    <footer>
+        <br>
+        &copy;lucassmtt
+    </footer>
+    <script src="idade.js"></script>
 </body>
 </html>
